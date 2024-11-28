@@ -19,7 +19,7 @@ export function InputSection({
   return (
     <div className="bg-white rounded-lg shadow-xl p-6 mb-8">
       <form onSubmit={handleSubmit} className="space-y-4">
-        <div className="flex gap-4">
+        <div className="flex flex-col md:flex-row gap-4">
           <div className="flex-1">
             <input
               type="number"
@@ -31,21 +31,23 @@ export function InputSection({
               max="720"
             />
           </div>
-          <button
-            type="button"
-            onClick={handleRandomNumber}
-            className="px-4 py-3 bg-orange-100 text-orange-700 rounded-lg hover:bg-orange-200 transition flex items-center gap-2"
-          >
-            <RefreshCw className="w-5 h-5" />
-            Random
-          </button>
-          <button
-            type="submit"
-            className="px-6 py-3 bg-orange-600 text-white rounded-lg hover:bg-orange-700 transition flex items-center gap-2"
-          >
-            <Search className="w-5 h-5" />
-            Seek Guidance
-          </button>
+          <div className="flex gap-2 md:gap-4">
+            <button
+              type="button"
+              onClick={handleRandomNumber}
+              className="flex items-center justify-center px-4 py-3 bg-orange-100 text-orange-700 rounded-lg hover:bg-orange-200 transition w-full md:w-auto"
+            >
+              <RefreshCw className="w-5 h-5" />
+              Random
+            </button>
+            <button
+              type="submit"
+              className="flex items-center justify-center px-6 py-3 bg-orange-600 text-white rounded-lg hover:bg-orange-700 transition w-full md:w-auto"
+            >
+              <Search className="w-5 h-5" />
+              Seek Guidance
+            </button>
+          </div>
         </div>
         {error && (
           <p className="text-red-600 text-sm">{error}</p>
